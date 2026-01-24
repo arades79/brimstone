@@ -13,12 +13,6 @@ image-version: stable
 # you can include multiple instances of the same module
 modules:
   - type: dnf
-    repos:
-      cleanup: true
-      files:
-      - https://packages.microsoft.com/yumrepos/vscode/config.repo
-      keys:
-      - https://packages.microsoft.com/keys/microsoft.asc
     group-install:
       with-optional: true
       packages:
@@ -36,7 +30,6 @@ modules:
       - gnupg2-utils
       - gnupg2-verify
       - gnupg2-wks
-      - code
     remove:
       packages:
         - firefox
