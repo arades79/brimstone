@@ -19,6 +19,7 @@ modules:
       - cosmic-desktop
       - cosmic-desktop-apps
     install:
+      skip-unavailable: true
       packages:
       - gnupg2-dirmngr
       - gnupg2-g13
