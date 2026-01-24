@@ -13,14 +13,27 @@ image-version: stable
 # you can include multiple instances of the same module
 modules:
   - type: dnf
+    repos:
+      cleanup: true
+      files:
+      - https://packages.microsoft.com/yumrepos/vscode/config.repo
+      keys:
+      - https://packages.microsoft.com/keys/microsoft.asc
     group-install:
       with-optional: true
       packages:
       - cosmic-desktop
       - cosmic-desktop-apps
+      # Includes compilers and system headers
+      - c-development
+      # needed for lots of weird python dependencies
+      - x-software-development
+      # power user tools
+      - system-tools
     install:
       skip-unavailable: true
       packages:
+      # All gpg subpackages to fix issues with yubikey pgp smartcard
       - gnupg2-dirmngr
       - gnupg2-g13
       - gnupg2-gpg
@@ -31,6 +44,31 @@ modules:
       - gnupg2-utils
       - gnupg2-verify
       - gnupg2-wks
+      # clang/llvm development packages too
+      - llvm
+      - clang
+      - clang-tools-extra
+      # VS code - uses MS repo added above. Could be replaced with brew-cask eventually hopefully
+      - code
+      # other helpful devy tools
+      - android-tools
+      - bcc
+      - bpftop
+      - bpftrace
+      - ccache
+      - flatpak-builder
+      - git-subtree
+      - nicstat
+      - numactl
+      - podman-machine
+      - podman-tui
+      - qemu-kvm
+      - restic
+      - rclone
+      - sysprof
+      - tiptop
+      - usbmuxd
+      - zsh
     remove:
       packages:
         - firefox
