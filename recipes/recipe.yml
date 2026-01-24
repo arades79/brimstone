@@ -23,9 +23,6 @@ modules:
       with-optional: true
       packages:
       - cosmic-desktop
-      - cosmic-desktop-apps
-      exclude:
-        - SDL3-devel
     install:
       skip-unavailable: true
       packages:
