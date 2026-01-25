@@ -71,6 +71,18 @@ modules:
           - org.gnome.Loupe
       - scope: user # Also add Flathub user repo, but no user packages
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode # don't add spaces or "Nerd Font" suffix
+        - Hack
+        - SourceCodePro
+        - Terminus
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+        - RecMono
+        - IosevkaTermSlab
+
   - type: chezmoi
     repository: "https://github.com/arades79/dotfiles" # my dotfiles repo
     all-users: false # make users have to enable chezmoi manually
