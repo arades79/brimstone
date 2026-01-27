@@ -55,6 +55,13 @@ modules:
         - firefox
         - firefox-langpacks
 
+  - type: systemd
+    system:
+      disabled:
+        - gdm.service
+      enabled:
+        - cosmic-greeter.service
+
   - type: fonts
     fonts:
       nerd-fonts:
