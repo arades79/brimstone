@@ -71,8 +71,8 @@ modules:
         - Terminus
         - JetBrainsMono
         - NerdFontsSymbolsOnly
-        - RecMono
-        - IosevkaTermSlab
+        # - RecMono
+        - Iosevka
 
   - type: chezmoi
     repository: https://github.com/arades79/dotfiles
