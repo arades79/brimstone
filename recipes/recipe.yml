@@ -52,6 +52,11 @@ modules:
         - virt-install
         - virt-manager
         - virt-viewer
+        # yubikey enablement
+        - pam-u2f
+        - pam_yubico
+        - pamu2fcfg
+        - yubikey-manager
         # other helpful devy tools
         - android-tools
         - bcc
