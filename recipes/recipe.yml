@@ -16,44 +16,65 @@ modules:
     group-install:
       with-optional: true
       packages:
-      - cosmic-desktop
+        - cosmic-desktop
     install:
       skip-unavailable: true
+      install-weak-deps: false
       packages:
-      # All gpg subpackages to fix issues with yubikey pgp smartcard
-      - gnupg2-dirmngr
-      - gnupg2-g13
-      - gnupg2-gpg
-      - gnupg2-gpgconf
-      - gnupg2-keyboxd
-      - gnupg2-scdaemon
-      - gnupg2-smime
-      - gnupg2-utils
-      - gnupg2-verify
-      - gnupg2-wks
-      # other helpful devy tools
-      - android-tools
-      - bcc
-      - bpftop
-      - bpftrace
-      - ccache
-      - flatpak-builder
-      - git-subtree
-      - nicstat
-      - numactl
-      - podman-machine
-      - podman-tui
-      - qemu-kvm
-      - restic
-      - rclone
-      - sysprof
-      - tiptop
-      - usbmuxd
-      - zsh
+        # All gpg subpackages to fix issues with yubikey pgp smartcard
+        - gnupg2-dirmngr
+        - gnupg2-g13
+        - gnupg2-gpg
+        - gnupg2-gpgconf
+        - gnupg2-keyboxd
+        - gnupg2-scdaemon
+        - gnupg2-smime
+        - gnupg2-utils
+        - gnupg2-verify
+        - gnupg2-wks
+        # rocm runtime
+        - rocm-hip
+        - rocm-opencl
+        - rocm-clinfo
+        - rocm-smi
+        # virtualization
+        - libvirt
+        - libvirt-nss
+        - qemu-device-display-virtio-gpu
+        - qemu-device-display-virtio-vga
+        - qemu-device-usb-redirect
+        - qemu
+        - qemu-img
+        - qemu-kvm
+        - qemu-tools
+        - qemu-user
+        - qemu-user-binfmt
+        - virt-install
+        - virt-manager
+        - virt-viewer
+        # other helpful devy tools
+        - android-tools
+        - bcc
+        - bpftop
+        - bpftrace
+        - ccache
+        - flatpak-builder
+        - git-subtree
+        - nicstat
+        - numactl
+        - podman-machine
+        - podman-tui
+        - restic
+        - rclone
+        - sysprof
+        - tiptop
+        - usbmuxd
+        - zsh
     remove:
       packages:
         - firefox
         - firefox-langpacks
+        - mesa-libOpenCL
 
   - type: systemd
     system:
